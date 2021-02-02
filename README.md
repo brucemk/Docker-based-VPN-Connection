@@ -8,5 +8,5 @@ To be able to deploy to certain environments, the developer or release manager n
 * open connect
 
 ## Quick Start
-For Automated deployment to a VPN using Docker & Jenkins see Jenkinsfile
-For Manual deployment to a VPN using Docker see manual-deploy.php
+* For Automated deployment to a VPN using Docker & Jenkins see Jenkinsfile
+* For Manual deployment to a VPN using Docker see manual-deploy.php
