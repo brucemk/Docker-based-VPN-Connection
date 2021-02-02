@@ -1,5 +1,6 @@
 # Automated deployment to a VPN using Jenkins. You use the step below in your jenkinsfile to do automated deployments over VPN
-
+node {
+  try {
         stage('Connect to Remote Repo and checkout Repo') {
         // using the ubuntu 20.10 / groovy Docker image
          docker.image('ubuntu:groovy').inside('-it --net=bridge --env="DISPLAY" --privileged --user="root"') {
@@ -34,3 +35,10 @@
             }
            }
           }
+  } catch (Exception exc) {
+      echo "Caught: ${exc}"
+      throw exc
+  } finally {
+      cleanWs()
+  }
+}
